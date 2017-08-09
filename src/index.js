@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import createStore from './store/createStore'
+import { Provider } from 'react-redux'
 
-const store = createStore({foo: 'bar'})
 
-ReactDOM.render(<App store={store} />, document.getElementById('root'));
-registerServiceWorker();
+import store from './store'
+
+
+import App from './components/App'
+
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.getElementById('root')
+);
+
+

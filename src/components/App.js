@@ -2,19 +2,21 @@ import React, {Component} from 'react';
 import {Provider} from 'react-redux'
 import {Route} from 'react-router'
 import Router from './router'
-import UsersListView from './Users/UsersListView'
-import WelcomeView from './Welcome/WelcomeView'
-
+import Member from './List'
+import store from '../store'
+import LeaderBoard from './LeaderBoard'
+import Newuser from './Newuser'
 class App extends Component {
   render() {
-    const {store} = this.props
 
     return (
       <Provider store={store}>
         <Router>
           <div>
-            <Route path='/users' exact component={UsersListView}/>
-            <Route path='/' exact component={WelcomeView}/>
+            <Route path='/' exact component={Member}/>
+            <Route path='/leaderboard' component={LeaderBoard}/>
+            <Route path='/newuser' component={Newuser}/>
+
           </div>
         </Router>
       </Provider>
