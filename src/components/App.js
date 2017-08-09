@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {Provider} from 'react-redux'
 import {Route} from 'react-router'
 import Router from './router'
-import UsersListView from './Users/UsersListView'
-import WelcomeView from './Welcome/WelcomeView'
+import UsersListView from './UsersListView'
+import WelcomeView from './WelcomeView'
+import Members from './List'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>
+            <Route path='/MemberList' exact component={Members}/>
             <Route path='/users' exact component={UsersListView}/>
             <Route path='/' exact component={WelcomeView}/>
           </div>
