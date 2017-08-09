@@ -24,7 +24,7 @@ export default connect(
 
         componentWillMount() {
           fetch(
-              `${process.env.PUBLIC_URL}/data/member.json`
+                'http://api.pandabot.desmart.com/users'
             ).then(
                 response => response.json().then(
                     data => {console.log(data);

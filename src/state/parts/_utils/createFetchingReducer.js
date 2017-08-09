@@ -17,7 +17,7 @@ export default prefix => {
                 return {
                     ...state,
                     fetching: false,
-                    data: action.data,
+                    data: action.data.data,
                     error: null
                 }
             case `members/FETCH__FAIL`:
