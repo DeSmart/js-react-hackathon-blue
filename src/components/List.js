@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Table } from 'react-bootstrap'
 
 import './App.css'
 
@@ -42,10 +43,23 @@ export default connect(
                     === null ?
                         null :
                         member.map(
-                            member => <table>
-                                <tr key="id">Member</tr>
-                                <td>{member.nick}</td>
-                            </table>
+                            member => <Table striped bordered condensed hover responsive>
+                                <thead>
+                                <tr>
+                                    <th>Nick</th>
+                                    <th>ID</th>
+                                    <th>Points</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{member.nick}</td>
+                                    <td>{member.id}</td>
+                                    <td>{member.points}</td>
+                                </tr>
+                                </tbody>
+                            </Table>
+
                         )
                 }</div>
             )
