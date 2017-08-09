@@ -5,6 +5,7 @@ import Router from './router'
 import Member from './List'
 import store from '../store'
 import LeaderBoard from './LeaderBoard'
+import Newuser from './Newuser'
 class App extends Component {
   render() {
 
@@ -14,6 +15,8 @@ class App extends Component {
           <div>
             <Route path='/' exact component={Member}/>
             <Route path='/leaderboard' component={LeaderBoard}/>
+            <Route path='/newuser' component={Newuser}/>
+
           </div>
         </Router>
       </Provider>

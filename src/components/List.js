@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import './css/bootstrap.css'
 
 import './App.css'
 
@@ -48,7 +48,7 @@ export default connect(
                     === null ?
                         null :
                         member.map(
-                            member => <Table striped bordered condensed hover responsive>
+                            member => <table className="table">
                                 <thead>
                                 <tr>
                                     <th>Nick</th>
@@ -61,7 +61,7 @@ export default connect(
                                     <td>{member.points}</td>
                                 </tr>
                                 </tbody>
-                            </Table>
+                            </table>
 
                         )
                 }</div>
