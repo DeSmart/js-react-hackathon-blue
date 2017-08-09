@@ -1,10 +1,8 @@
-import productsSearching from './parts/productsSearching'
+import memberFetching from './parts/list'
 
 
 export default (state = {}, action) => {
     return {
-        productsSearching: productsSearching(state.productsSearching, action),
-
-
+        memberFetching: memberFetching(state.memberFetching, action),
     }
 }
