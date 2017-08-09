@@ -38,7 +38,10 @@ export default connect(
 
             const member = this.props.memberFetching.data
             return (
-                <div>{
+                <div>
+
+                    Przejdz do Leaderbordu
+                    {
                     member
                     === null ?
                         null :

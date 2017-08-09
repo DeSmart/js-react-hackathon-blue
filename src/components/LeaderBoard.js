@@ -23,7 +23,7 @@ export default connect(
 
         componentWillMount() {
             fetch(
-                `${process.env.PUBLIC_URL}/data/member.json`
+                `${process.env.PUBLIC_URL}/data/pointsRecived.json`
             ).then(
                 response => response.json().then(
                     data => {console.log(data);
@@ -46,15 +46,13 @@ export default connect(
                         member.sort((a,b) => b.points - a.points).map(member => <Table striped bordered condensed hover responsive>
                                 <thead>
                                 <tr>
-                                    <th>Nick</th>
-                                    <th>ID</th>
-                                    <th>Points</th>
+                                    <th>Id</th>
+                                    <th>Points Recived</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>{member.nick}</td>
-                                    <td>{member.id}</td>
+                                    <td>{member.user_id}</td>
                                     <td>{member.points}</td>
                                 </tr>
                                 </tbody>
