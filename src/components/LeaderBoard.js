@@ -37,14 +37,13 @@ export default connect(
         render() {
 
             const member = this.props.memberFetching.data
-
-            console.log(typeof member.points)
+            
             return (
                 <div>{
                     member
                     === null ?
                         null :
-                        member.map.sort((a,b) => a.points - b.points).map(member => <Table striped bordered condensed hover responsive>
+                        member.sort((a,b) => b.points - a.points).map(member => <Table striped bordered condensed hover responsive>
                                 <thead>
                                 <tr>
                                     <th>Nick</th>
