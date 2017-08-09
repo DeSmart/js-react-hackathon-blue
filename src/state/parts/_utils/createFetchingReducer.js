@@ -6,20 +6,21 @@ export default prefix => {
     }
 
     return (state = initialState, action) => {
+        console.log(action)
         switch (action.type) {
-            case `${prefix}/FETCH__BEGIN`:
+            case `members/FETCH__BEGIN`:
                 return {
                     ...state,
                     fetching: true
                 }
-            case `${prefix}/FETCH__SUCCESS`:
+            case `members/FETCH__SUCCESS`:
                 return {
                     ...state,
                     fetching: false,
                     data: action.data,
                     error: null
                 }
-            case `${prefix}/FETCH__FAIL`:
+            case `members/FETCH__FAIL`:
                 return {
                     ...state,
                     fetching: false,

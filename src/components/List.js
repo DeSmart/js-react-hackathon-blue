@@ -5,37 +5,51 @@ import './App.css'
 
 export default connect(
     state => ({
-        members: state.members,
+        memberFetching: state.memberFetching
 
     }),
     dispatch => ({
-        success: data => dispatch({
-            type: 'products/FETCH__SUCCESS',
-            data: data
-        }),
+        success: data => {
+            console.log(data)
+            dispatch({
+            type: 'members/FETCH__SUCCESS',
+            data: data})
+        },
 
     })
 )(
     class List extends React.Component {
-        componentWillMount() {
-            fetch(
-                'api.pandabot.desmart.com/users',{
-                    method: 'GET'
 
-            }
+        componentWillMount() {
+          fetch(
+                `${process.env.PUBLIC_URL}/data/member.json`
             ).then(
                 response => response.json().then(
-                    data => this.props.success(data)
-                )
-            )
+                    data => {console.log(data);
+                    this.props.success(data)}
+                ))
+
         }
 
 
 
         render() {
-            return ( <div> dasdaasdasdasdsdas</div>
 
-                )
+            const member = this.props.memberFetching.data
+            return (
+                <div>{
+                    member
+                    === null ?
+                        null :
+                        member.map(
+                            member => <table>
+                                <tr key="id">Member</tr>
+                                <td>{member.nick}</td>
+                            </table>
+                        )
+                }</div>
+            )
+
 
         }
     }

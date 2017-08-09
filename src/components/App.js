@@ -11,7 +11,6 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>
-            <Route path='/MemberList' exact component={Member}/>
             <Route path='/' exact component={Member}/>
           </div>
         </Router>
