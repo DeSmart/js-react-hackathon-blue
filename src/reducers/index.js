@@ -1,3 +1,11 @@
-import { combineReducers } from 'redux'
+import productsSearching from './parts/productsSearching'
 
-export default combineReducers({})
+
+
+export default (state = {}, action) => {
+    return {
+        productsSearching: productsSearching(state.productsSearching, action),
+
+
+    }
+}
