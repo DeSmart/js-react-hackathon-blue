@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Table } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import './App.css'
 
@@ -23,7 +24,7 @@ export default connect(
 
         componentWillMount() {
           fetch(
-                `${process.env.PUBLIC_URL}/data/member.json`
+              `${process.env.PUBLIC_URL}/data/member.json`
             ).then(
                 response => response.json().then(
                     data => {console.log(data);
@@ -39,8 +40,9 @@ export default connect(
             const member = this.props.memberFetching.data
             return (
                 <div>
-
-                    Przejdz do Leaderbordu
+                    <Link to={'/leaderboard/'}>Przejdz do leaderboarda</Link>
+                    <br/>
+                    <Link to={'/newuser'}>Założ nowego użytkownika</Link>
                     {
                     member
                     === null ?
@@ -50,14 +52,12 @@ export default connect(
                                 <thead>
                                 <tr>
                                     <th>Nick</th>
-                                    <th>ID</th>
                                     <th>Points</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td>{member.nick}</td>
-                                    <td>{member.id}</td>
                                     <td>{member.points}</td>
                                 </tr>
                                 </tbody>

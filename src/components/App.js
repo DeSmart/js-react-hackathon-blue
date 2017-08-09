@@ -12,7 +12,6 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>
-
             <Route path='/' exact component={Member}/>
             <Route path='/leaderboard' component={LeaderBoard}/>
           </div>

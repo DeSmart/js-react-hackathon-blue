@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Table } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 import './App.css'
 
@@ -39,7 +40,9 @@ export default connect(
             const member = this.props.memberFetching.data
             
             return (
-                <div>{
+                <div>
+                    <Link to={'/'}>Wróć do listy użytkowników</Link>
+                    {
                     member
                     === null ?
                         null :
